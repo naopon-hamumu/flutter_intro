@@ -73,6 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ]),
       floatingActionButton: FloatingActionButton( // 画面の右下最前面に表示されるボタンを作成
         onPressed: () => {print("押したね？")}, child: const Icon(Icons.timer)),
+      drawer: const Drawer(child: Center(child: Text("Drawer"))), // 左側のサイドメニュー
+      endDrawer: const Drawer(child: Center(child: Text("EndDrawer"))), // 右側のサイドメニュー
     );
   }
 }

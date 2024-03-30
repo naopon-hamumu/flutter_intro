@@ -44,6 +44,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               // children：どのWidgetを並べるか配列を指定
         const Text("HelloWorld"),
         const Text("ハローワールド"),
+        TextButton(
+          onPressed: () => {print("ボタンが押されたよ")}, // ボタンが押された時のイベントを設定
+          child: const Text("テキストボタン"), // 画面上に表示する文字列
+        )
       ])
     );
   }

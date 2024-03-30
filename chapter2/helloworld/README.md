@@ -19,3 +19,6 @@ samples, guidance on mobile development, and a full API reference.
 1. 開発で直接使うプラットフォーム共通のもの 例：lib
 2. 開発で直接使うプラットフォーム個別のもの 例：Android
 3. 開発で間接的に使うもの 例：README
+
+## 参考リンク
+* [Icons class](https://api.flutter.dev/flutter/material/Icons-class.html)

@@ -47,7 +47,26 @@ class _MyHomePageState extends State<MyHomePage> {
         TextButton(
           onPressed: () => {print("ボタンが押されたよ")}, // ボタンが押された時のイベントを設定
           child: const Text("テキストボタン"), // 画面上に表示する文字列
-        )
+        ),
+        Row( // 横にWidgetを配置
+          mainAxisAlignment: MainAxisAlignment.spaceAround, // 列の要素を等間隔で表示
+          children: const[
+            Icon(
+              Icons.favorite,
+              color: Colors.pink,
+              size: 24.0,
+            ),
+            Icon(
+              Icons.audiotrack,
+              color: Colors.green,
+              size: 30.0,
+            ),
+            Icon(
+              Icons.beach_access,
+              color: Colors.blue,
+              size: 36.0,
+            ),
+          ]),
       ])
     );
   }

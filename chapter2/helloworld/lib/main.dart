@@ -40,7 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(children:[
+      body: Column(children:[ // Column：縦にWidgetを配置
+                              // children：どのWidgetを並べるか配列を指定
         const Text("HelloWorld"),
         const Text("ハローワールド"),
       ])

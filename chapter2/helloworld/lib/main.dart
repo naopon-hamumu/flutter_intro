@@ -70,7 +70,9 @@ class _MyHomePageState extends State<MyHomePage> {
               size: 36.0,
             ),
           ]),
-      ])
+      ]),
+      floatingActionButton: FloatingActionButton( // 画面の右下最前面に表示されるボタンを作成
+        onPressed: () => {print("押したね？")}, child: const Icon(Icons.timer)),
     );
   }
 }

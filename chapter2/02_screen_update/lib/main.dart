@@ -34,13 +34,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int _counter = 0; // 1 変数の定義
 
   // 5.カウンタが押された時のメソッド
   void _incrementCounter() {
-    setState(() {
-      _counter++;
-      print("HelloWorld");
+    setState(() { // ※画面表示に必要
+      _counter++; // 4 変数を更新
     });
   }
 
@@ -62,8 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             // テキストの下に表示されるカウンタ値
-            Text(
-              '$_counter',
+            Text( // 2 変数の表示
+              '$_counter', // 5 変数の更新
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
@@ -71,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       // 右下の「+」ボタンに対応するフローティングアクションボタン
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _incrementCounter, // 3 ボタンをタップするとメソッドが呼ばれる
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), 

@@ -35,17 +35,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0; // 1 変数の定義
-  String _type = "偶数";
 
   // 5.カウンタが押された時のメソッド
   void _incrementCounter() {
     setState(() { // ※画面表示に必要
       _counter++; // 4 変数を更新
-      if (_counter % 2 == 0){
-        _type = "偶数";
-      } else {
-        _type = "奇数";
-      }
     });
   }
 
@@ -71,7 +65,8 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter', // 5 変数の更新
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            Text('$_type', style: TextStyle(fontSize: 20, color: Colors.red))
+            if (_counter % 2 == 0)
+              const Text('偶数です', style: TextStyle(fontSize: 20, color: Colors.red)),
           ],
         ),
       ),

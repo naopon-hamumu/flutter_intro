@@ -1,4 +1,4 @@
-# helloworld
+# animation
 
 A new Flutter project.
 
@@ -14,8 +14,3 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-
-## フォルダの基本構成
-1. 開発で直接使うプラットフォーム共通のもの 例：lib
-2. 開発で直接使うプラットフォーム個別のもの 例：Android
-3. 開発で間接的に使うもの 例：README

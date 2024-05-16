@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'test_page2.dart';
 
 class TestPage1 extends StatelessWidget {
   @override
@@ -10,9 +11,10 @@ class TestPage1 extends StatelessWidget {
       body: Center(
         child: TextButton(
           onPressed: () => {
-            Navigator.of(context).pushNamed("/test2")
-            // 下記の書き方でも可
-            // Navigator.pushNamed(context, "/test2")
+            Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) {
+                return TestPage2();
+            }))
           },
         child: const Text("進む", style: TextStyle(fontSize: 80)))));
   }

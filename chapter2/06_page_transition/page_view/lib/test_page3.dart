@@ -9,7 +9,7 @@ class TestPage3 extends StatelessWidget {
       ),
       body: Center(
         child: TextButton(
-          onPressed: () => {Navigator.of(context).pushNamed("/test2")},
+          onPressed: () => {Navigator.of(context).pop()},
           child: const Text("戻る", style: TextStyle(fontSize: 80)))));
   }
 }

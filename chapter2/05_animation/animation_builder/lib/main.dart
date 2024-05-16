@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'dart:math';
 
 void main() {
   runApp(const MyApp());
@@ -48,11 +49,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> with
 TickerProviderStateMixin {
   late AnimationController _animationController;
-  late Animation<double> _animationDouble;
-  final Tween<double> _tweenDouble = Tween(begin: 0.0, end: 200.0);
-  late Animation<Color?> _animationColor;
-  final ColorTween _tweenColor =
-    ColorTween(begin: Colors.green, end: Colors.blue);
+  late Animation _animation;
 
   // 再生
   _forward() async {
@@ -80,17 +77,8 @@ TickerProviderStateMixin {
   void initState() {
     super.initState();
     _animationController =
-      AnimationController(vsync: this, duration: const Duration(seconds: 3));
-    // TweenとAnimationControllerからAnimationを作る(サイズ)
-    _animationDouble = _tweenDouble.animate(_animationController);
-    _animationDouble.addListener(() {
-      setState(() {});
-    });
-    // TweenとAnimationControllerからAnimationを作る(色)
-    _animationColor = _tweenColor.animate(_animationController);
-    _animationColor.addListener(() {
-      setState(() {});
-    });
+      AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _animation = _animationController.drive(Tween(begin: 0.0, end: 2.0 * pi));
   }
 
   // 破棄
@@ -107,22 +95,14 @@ TickerProviderStateMixin {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text("AnimationController:${_animationController.value}"),
-            Text("AnimationDouble:${_animationDouble.value}"),
-            Text("AnimationColors:${_animationColor.value}"),
-            SizeTransition(
-              sizeFactor: _animationController, // AnimationControllerを設定
-              child: Center(
-                child: SizedBox(
-                  width: 50,
-                  height: 50,
-                  child: Container(color: _animationColor.value))),
-            ),
-          ],
-        ),
+        child: AnimatedBuilder(
+          animation: _animation,
+          builder: (context, _){
+            return Transform.rotate(
+              angle: _animation.value,
+              child: const Icon(Icons.cached, size: 100));
+          }
+        )
       ),
       // 再生・停止・逆再生のボタン
       floatingActionButton:
